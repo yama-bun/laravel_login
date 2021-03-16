@@ -25,11 +25,9 @@
             </div>
         @endif
 
-        @if (session('login_error'))
-            <div class="alert alert-danger">
-                {{ session('login_error') }}
-            </div>
-        @endif
+        <x-alert type="danger" :session="session('login_error')"/>
+        <x-alert type="danger" :session="session('logout')"/>
+
         <label for="inputEmail" class="sr-only">メールアドレス</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="メールアドレス" required autofocus>
         <label for="inputPassword" class="sr-only">パスワード</label>
